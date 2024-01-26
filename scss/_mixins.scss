@@ -1,0 +1,67 @@
+@mixin button {
+    margin-top: 32px;
+    width: 240px;
+    height: 54px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background-color: $button-color;
+    color: $text-color;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 700;
+    line-height: normal;
+}
+
+@mixin card {
+    display: flex;
+    text-align: center;
+    @include display-flex(center, center, column);
+    background-color: $card-bg;
+    box-shadow: 1px 1px 1px #0000001f;
+    border-radius: 5px;
+    width: 280px;
+    height: 323px;
+    &:hover {
+        height: 350px;
+        transition: 0.3s;
+        cursor: pointer;
+        background-color: $card-hover-bg;
+    }
+
+    
+
+    svg {
+        margin: 20px;
+    }
+
+    .card-title {
+        margin-top: 30px;
+        color: $text-color;
+        font-size: 1.125em;
+        font-weight: 800;
+    }
+
+    .card-text {
+        padding: 10px;
+        color: $text-color;
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 165%;
+    }
+    
+}
+
+
+
+
+@mixin display-flex($align, $justify, $direction) {
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@mixin responsive($screenWidth) {
+    @media(max-width: $screenWidth) {
+        @content;
+    }
+}

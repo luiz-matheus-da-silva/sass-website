@@ -1,0 +1,85 @@
+section {
+    background-color: $primary-bg;
+
+    .hero {
+        display: flex;
+        margin: 0 auto;
+        @include display-flex(center, center, row);
+        width: 80%;
+
+        .hero-text {
+            flex: 1;
+
+            .hero-title {
+                color: $accent-text-color;
+                font-size: 3em;
+                font-weight: 700;
+                line-height: 120%;
+            }
+
+            .hero-subtitle {
+                color: $accent-text-color;
+                font-size: 1.125em;
+                font-weight: 400;
+                line-height: 150%;
+                margin-top: 16px
+            }
+
+            button {
+                @include button;
+                &:hover {
+                    background-color: $button-hover-color;
+                    cursor: pointer;
+                    width: 245px;
+                    height: 58px;
+                    transition: 0.2s;
+                }
+            }
+
+            .hero-resources {
+                display: flex;
+                @include display-flex(center, flex-start, row);
+                margin-top: 95px;
+                width: 80%;
+
+                p {
+                    color: $accent-text-color;
+                    font-family: Lato;
+                    font-size: 1em;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    margin-left: 16px;
+                }
+            }
+        }
+
+        .hero-img {
+            flex: 1;
+            text-align: center;
+        }
+    }
+
+    @include responsive(1366px) {
+        .hero {
+            display: flex;
+            margin: 0 auto;
+            @include display-flex(center, center, column);
+            width: 100%;
+
+            .hero-text {
+                text-align: center;
+                margin-top: 40px;
+
+                .hero-resources {
+                    @include display-flex(center, center, row);
+                    width: 100%;
+                }
+            }
+
+
+        }
+
+
+    }
+}

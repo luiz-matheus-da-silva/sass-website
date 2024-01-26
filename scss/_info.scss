@@ -1,0 +1,42 @@
+#info-section {
+    background-color: #FFF;
+
+    .info {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 149px;
+
+        .info-text {
+            .info-title {
+                color: $text-color;
+                font-size: 2em;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 130%;
+            }
+        }
+
+        .info-cards {
+            display: flex;
+            @include display-flex(center, center, row);
+
+            .card {
+                @include card;
+                margin: 53px 10px 99px 0px;
+
+                &:last-child {
+                    margin-right: 0; // Remover a margem à direita para o último cartão
+                }
+            }
+        }
+
+        @include responsive(968px) {
+            .info-cards {
+                @include display-flex(center, center, column);
+                .card {
+                    margin: 20px 0px; // Ajustar as margens para o layout de coluna
+                }
+            }
+        }
+    }
+}
